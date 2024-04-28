@@ -1,12 +1,471 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/sohiab/ontologies/2024/3/untitled-ontology-7/"
      xml:base="http://www.semanticweb.org/sohiab/ontologies/2024/3/untitled-ontology-7/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3"/>
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:EcommerceWebsite="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#">
+    <owl:Ontology rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasCustomer -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasCustomer">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasManufacturer -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasManufacturer">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Manufacturer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasOrder -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasOrder">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasParentCategory -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasParentCategory">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasProduct -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasProduct">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasSimilarProduct -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasSimilarProduct">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#isManufacturerOf -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#isManufacturerOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Manufacturer"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#isPaymentFor -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#isPaymentFor">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#isShippingFor -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#isShippingFor">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping"/>
+        <rdfs:range rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PaymentStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PaymentStatus">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ProductDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ProductDescription">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ProductName -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ProductName">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ShippingStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ShippingStatus">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasAddress">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasAmount -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasAmount">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasEmail">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasName">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasPaymentMethod -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasPaymentMethod">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasPrice">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasQuantity -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasQuantity">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasShippingMethod -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasShippingMethod">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasStatus">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasTotalPrice -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasTotalPrice">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasTrackingNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#hasTrackingNumber">
+        <rdfs:domain rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ApplyPay -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ApplyPay">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#BookProduct -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#BookProduct">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+        <owl:deprecated>Out of service</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ClothingProduct -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ClothingProduct">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#CreditCard -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#CreditCard">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite">
+        <owl:versionInfo>V04.24</owl:versionInfo>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ElectronicProduct -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ElectronicProduct">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Express -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Express">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Manufacturer -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Manufacturer">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PayPal -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PayPal">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite"/>
+        <rdfs:label>Оплата</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PerfumsProduct -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PerfumsProduct">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PremiumCustomer -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PremiumCustomer">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+        <owl:disjointWith rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#RegularCustomer"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Preorder -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Preorder">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Product">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite"/>
+        <rdfs:label>Product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PurchaseOrder -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PurchaseOrder">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Order"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#RegularCustomer -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#RegularCustomer">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Customer"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#SamsungPay -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#SamsungPay">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Payment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#EcommerceWebsite"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Standard -->
+
+    <owl:Class rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Standard">
+        <rdfs:subClassOf rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Shipping"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#AppleIphone -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#AppleIphone">
+        <rdf:type rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#ElectronicProduct"/>
+        <EcommerceWebsite:hasAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</EcommerceWebsite:hasAmount>
+        <EcommerceWebsite:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000.5</EcommerceWebsite:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Sohaib -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Sohaib">
+        <rdf:type rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#PremiumCustomer"/>
+        <EcommerceWebsite:hasOrder rdf:resource="https://github.com/sohaibssb/InformationRetrievalSystems.git/Lab3/EcommerceWebsite.owl#Sohaib"/>
+        <EcommerceWebsite:hasEmail>soh@gmail.com</EcommerceWebsite:hasEmail>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
