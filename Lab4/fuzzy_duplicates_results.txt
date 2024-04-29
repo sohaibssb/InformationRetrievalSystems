@@ -1,0 +1,23 @@
+Кластеры нечетких дубликатов документов и общих фраз:
+Cluster 1:
+  - Documents: doc4.txt and doc6.txt, Fuzzy Similarity: 54, Common Phrases: ['and', 'in', 'on']
+Cluster 2:
+  - Documents: doc4.txt and doc3.txt, Fuzzy Similarity: 65, Common Phrases: ['family', 'of', 'and', 'the']
+Cluster 3:
+  - Documents: doc4.txt and doc1.txt, Fuzzy Similarity: 53, Common Phrases: ['the']
+Cluster 4:
+  - Documents: doc6.txt and doc3.txt, Fuzzy Similarity: 62, Common Phrases: ['is', 'a', 'and', 'to']
+Cluster 5:
+  - Documents: doc6.txt and doc2.txt, Fuzzy Similarity: 52, Common Phrases: ['The', 'is', 'a', 'and']
+Cluster 6:
+  - Documents: doc6.txt and doc5.txt, Fuzzy Similarity: 52, Common Phrases: ['The', 'is', 'a', 'and', 'to']
+Cluster 7:
+  - Documents: doc3.txt and doc5.txt, Fuzzy Similarity: 51, Common Phrases: ['is', 'a', 'and', 'to', 'the']
+Cluster 8:
+  - Documents: doc3.txt and doc1.txt, Fuzzy Similarity: 51, Common Phrases: ['a', 'to', 'the']
+Cluster 9:
+  - Documents: doc2.txt and doc5.txt, Fuzzy Similarity: 64, Common Phrases: ['The', 'is', 'a', 'and', 'the']
+Cluster 10:
+  - Documents: doc2.txt and doc1.txt, Fuzzy Similarity: 68, Common Phrases: ['the', 'a']
+Cluster 11:
+  - Documents: doc5.txt and doc1.txt, Fuzzy Similarity: 62, Common Phrases: ['a', 'to', 'the']
